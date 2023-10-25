@@ -27,14 +27,14 @@ public class ContrCalculator {
         if (num1 == null || num2 == null) {
             return  "Введите оба числа";
         }
-        return calcService.plus(num1,num2) ;
+        return num1 + " + " + num2 + " = " + calcService.plus(num1,num2) ;
     }
     @GetMapping ("/minus")
     public String minus(
             @RequestParam(name ="num1", required = false) Integer num1,
             @RequestParam(name = "num2", required = false) Integer num2
     ) {
-        return calcService.minus(num1, num2);
+        return num1 + " - " + num2 + " = " + calcService.minus(num1, num2);
     }
 
     @GetMapping ("/multiply")
@@ -42,7 +42,7 @@ public class ContrCalculator {
             @RequestParam(name ="num1", required = false) Integer num1,
             @RequestParam(name = "num2", required = false) Integer num2
     ) {
-        return calcService.multiply(num1, num2);
+        return num1 + " * " + num2 + " = " + calcService.multiply(num1, num2);
     }
 
     @GetMapping ("/divide")
@@ -53,7 +53,7 @@ public class ContrCalculator {
         if (num2 == 0) {
             return "Error";
         } else {
-            return calcService.divinity(num1, num2);
+            return num1 + " / " + num2 + " = " + calcService.divinity(num1, num2);
         }
     }
 }
